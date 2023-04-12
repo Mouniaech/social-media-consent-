@@ -580,19 +580,19 @@
         </div>
     </div> <input type="hidden" id="CheckboxValue" name="CheckboxValue" value="No">
     <script> 
-    var submitButton = document.getElementById('submitButton');
-     var agreeBlock = document.getElementById('agreeTnC'); 
-     var tnc_err = document.getElementById('tnc_err'); 
-     var thankSection = document.getElementById('thankSection'); 
-     
-     var privacyBlock = document.getElementById('privacyBlock') 
-        submitButton.addEventListener('click', ev => { if (!agreeBlock.checked) { 
-        tnc_err.classList.remove('hide') } 
-        else { tnc_err.classList.add('hide')
-         thankSection.classList.remove('hide')
-          privacyBlock.classList.add('hide') 
-         submitButton.disabled = true } }) 
-         </script>
+        var submitButton = document.getElementById('submitButton');
+         var agreeBlock = document.getElementById('agreeTnC'); 
+         var tnc_err = document.getElementById('tnc_err'); 
+         var thankSection = document.getElementById('thankSection'); 
+         
+         var privacyBlock = document.getElementById('privacyBlock') 
+            submitButton.addEventListener('click', ev => { if (!agreeBlock.checked) { 
+            tnc_err.classList.remove('hide') } 
+            else { tnc_err.classList.add('hide')
+             thankSection.classList.remove('hide')
+              privacyBlock.classList.add('hide') 
+             submitButton.disabled = true } }) 
+             </script>
 </body>
 
 </html>
