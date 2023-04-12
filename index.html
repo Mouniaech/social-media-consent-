@@ -6,31 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-            %%[
-        SET @CheckboxValue = RequestParameter("CheckboxValue")
-        SET @SubscriberKey = RequestParameter("SubscriberKey")
-        IF Not Empty(@CheckboxValue) THEN
-        SET @DEName = "DE test for consent HK"
-        SET @is_checked = "is_checked"
-        IF @CheckboxValue == "Yes" THEN
-            SET @is_checked = 1
-        ELSE
-            SET @is_checked = 0
-        ENDIF
-        InsertData(@DEName, "SubscriberKey", @SubscriberKey, @is_checked, @is_checked)
-        ENDIF
-        ]%%
-
+    <!-- %%[ SET @CheckboxValue = RequestParameter("CheckboxValue") SET @SubscriberKey = RequestParameter("SubscriberKey") IF Not Empty(@CheckboxValue) THEN SET @DEName = "DE test for consent HK" SET @is_checked = "is_checked" IF @CheckboxValue == "Yes" THEN SET @is_checked = 1 ELSE SET @is_checked = 0 ENDIF InsertData(@DEName, "SubscriberKey", @SubscriberKey, @is_checked, @is_checked) ENDIF ]%% -->
     <style>
-
-        
         /* Here’s the CSS reset */
         html {
             box-sizing: border-box;
             font-size: 16px;
         }
 
-        *,
+        x² *,
         *:before,
         *:after {
             font-family: 'Muli';
@@ -139,13 +123,46 @@
         .hide {
             display: none;
         }
+
+        .page-complete {
+            text-align: center;
+            font-size: 14pt;
+            font-weight: 400;
+        }
+
+        .page-complete .paragraph {
+            text-align: start;
+            padding: 0 35px;
+        }
+
+        .page-complete .logo {
+            min-width: 200px;
+            width: 30%;
+            margin: 20px 0 60px 0;
+        }
+
+        .page-complete .p1 {
+            margin-bottom: 24px;
+        }
+
+        .page-complete a {
+            color: #000;
+            font-size: 15pt;
+            font-weight: bold;
+        }
+
+        @media (min-width: 992px) {
+            .page-complete .paragraph {
+                padding: 0 180px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="home-page container">
-        <h1>Privacy Policy Consent Form</h1>
         <div id="privacyBlock">
+            <h1>Privacy Policy Consent Form</h1>
             <div id="inner-scroll" class="overflow-box">
                 <div class="text-wrapper">
                     <div class="headline">MAKE UP FOR EVER PRIVACY POLICY</div>
@@ -332,8 +349,7 @@
                                 particular, we entrust certain services to third parties in charge of delivering you a
                                 product, payment service providers and providers securing transactions against fraud.
                                 <br>Please note that these partners may act as data controller; in such case, they have
-                                their own privacy policies.
-                            </li>
+                                their own privacy policies. </li>
                             <li>Third parties in the event of a change of control, for legal reasons, or with your prior
                                 consent </li>
                         </ol>
@@ -541,7 +557,6 @@
                     </div>
                 </div>
             </div>
-            <form id="landingPageForm" action="form_processor_page_url" method="post">
             <div class="fields">
                 <div class="field-group">
                     <div class="field-wrapper full">
@@ -555,25 +570,29 @@
             </div>
         </div>
     </div>
-    <div class="page-complete hide" id="thankSection">
-        <h1> Thank you for your submission. </h1>
-    </div>
-     <input type="hidden" id="CheckboxValue" name="CheckboxValue" value="No">
-     </form>
-    <script>
-        var submitButton = document.getElementById('submitButton'); 
-        var agreeBlock = document.getElementById('agreeTnC'); 
-        var tnc_err = document.getElementById('tnc_err');
-        var thankSection = document.getElementById('thankSection'); 
-        var privacyBlock = document.getElementById('privacyBlock') 
-        submitButton.addEventListener('click', ev => {
-                if (!agreeBlock.checked) { tnc_err.classList.remove('hide') }
-                 else {
-                    tnc_err.classList.add('hide')
-                    thankSection.classList.remove('hide') 
-                    privacyBlock.classList.add('hide')
-                    submitButton.disabled = true } }) 
-                  </script>
-</body >
+    <div class="page-complete hide" id="thankSection"> <img class="logo"
+            src="https://image.probeauty.makeupforever.com/lib/fe8b1373776c0c7c72/m/2/6319496b-7770-4ea2-8c4b-5919c7b0b906.png"
+            alt="logo">
+        <div class="paragraph container">
+            <p class="p1"> Thank you for your submission. </p>
+            <p class="p2">To discover our latest news and offers, please click <a
+                    href="http://bit.ly/3lXtEdu ">here</a>.</p>
+        </div>
+    </div> <input type="hidden" id="CheckboxValue" name="CheckboxValue" value="No">
+    <script> 
+    var submitButton = document.getElementById('submitButton');
+     var agreeBlock = document.getElementById('agreeTnC'); 
+     var tnc_err = document.getElementById('tnc_err'); 
+     var thankSection = document.getElementById('thankSection'); 
+     
+     var privacyBlock = document.getElementById('privacyBlock') 
+        submitButton.addEventListener('click', ev => { if (!agreeBlock.checked) { 
+        tnc_err.classList.remove('hide') } 
+        else { tnc_err.classList.add('hide')
+         thankSection.classList.remove('hide')
+          privacyBlock.classList.add('hide') 
+         submitButton.disabled = true } }) 
+         </script>
+</body>
 
-</html >
+</html>
