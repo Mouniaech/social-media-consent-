@@ -51,8 +51,6 @@
             --bs-gutter-x: 1.5rem;
             --bs-gutter-y: 0;
             width: 100%;
-            padding-right: calc(var(--bs-gutter-x) * 0.5);
-            padding-left: calc(var(--bs-gutter-x) * 0.5);
             margin-right: auto;
             margin-left: auto;
         }
@@ -126,19 +124,20 @@
 
         .page-complete {
             text-align: center;
-            font-size: 14pt;
+            font-size: 18pt;
             font-weight: 400;
         }
 
         .page-complete .paragraph {
-            text-align: start;
-            padding: 0 35px;
+            text-align: center;
+            width: 40%;
+            min-width: 300px;
         }
 
         .page-complete .logo {
-            min-width: 200px;
-            width: 30%;
-            margin: 20px 0 60px 0;
+            min-width: 170px;
+            width: 18%;
+            margin: 20px 0 130px 0;
         }
 
         .page-complete .p1 {
@@ -151,9 +150,9 @@
             font-weight: bold;
         }
 
-        @media (min-width: 992px) {
-            .page-complete .paragraph {
-                padding: 0 180px;
+        @media only screen and (max-width: 576px) {
+            .page-complete {
+                font-size: 14pt;
             }
         }
     </style>
@@ -165,6 +164,7 @@
             <h1>Privacy Policy Consent Form</h1>
             <div id="inner-scroll" class="overflow-box">
                 <div class="text-wrapper">
+                    <div>Privacy Policy Amendment (In effect from 19 Dec 2022)</div>
                     <div class="headline">MAKE UP FOR EVER PRIVACY POLICY</div>
                     <div class="inner-content">
                         <p>Confidentiality and security of your personal data are important to us. We are committed to
@@ -580,19 +580,16 @@
         </div>
     </div> <input type="hidden" id="CheckboxValue" name="CheckboxValue" value="No">
     <script> 
-        var submitButton = document.getElementById('submitButton');
-         var agreeBlock = document.getElementById('agreeTnC'); 
-         var tnc_err = document.getElementById('tnc_err'); 
-         var thankSection = document.getElementById('thankSection'); 
-         
-         var privacyBlock = document.getElementById('privacyBlock') 
-            submitButton.addEventListener('click', ev => { if (!agreeBlock.checked) { 
-            tnc_err.classList.remove('hide') } 
-            else { tnc_err.classList.add('hide')
+    var submitButton = document.getElementById('submitButton');
+     var agreeBlock = document.getElementById('agreeTnC');
+      var tnc_err = document.getElementById('tnc_err'); var thankSection = document.getElementById('thankSection');
+       var privacyBlock = document.getElementById('privacyBlock')
+        submitButton.addEventListener('click', ev => { if (!agreeBlock.checked) {
+             tnc_err.classList.remove('hide') } else { tnc_err.classList.add('hide') 
              thankSection.classList.remove('hide')
               privacyBlock.classList.add('hide') 
-             submitButton.disabled = true } }) 
-             </script>
+              submitButton.disabled = true } })
+               </script>
 </body>
 
 </html>
