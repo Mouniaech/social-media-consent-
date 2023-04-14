@@ -1,3 +1,8 @@
+<script
+    runat="server"> Platform.Load("core", "1.1"); // initialisation des variables 
+    
+    var ContactKey = Attribute.GetValue("_subscriberkey") || Request.GetQueryStringParameter("contactkey"); 
+    Write('<script>' + 'var ContactKey = "' + ContactKey + '";<\/script>'); </script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +11,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- %%[ SET @CheckboxValue = RequestParameter("CheckboxValue") SET @SubscriberKey = RequestParameter("SubscriberKey") IF Not Empty(@CheckboxValue) THEN SET @DEName = "DE test for consent HK" SET @is_checked = "is_checked" IF @CheckboxValue == "Yes" THEN SET @is_checked = 1 ELSE SET @is_checked = 0 ENDIF InsertData(@DEName, "SubscriberKey", @SubscriberKey, @is_checked, @is_checked) ENDIF ]%% -->
     <style>
         /* Here’s the CSS reset */
         html {
@@ -14,7 +18,7 @@
             font-size: 16px;
         }
 
-        x² *,
+        *,
         *:before,
         *:after {
             font-family: 'Muli';
@@ -579,17 +583,12 @@
                     href="http://bit.ly/3lXtEdu ">here</a>.</p>
         </div>
     </div> <input type="hidden" id="CheckboxValue" name="CheckboxValue" value="No">
-    <script> 
-    var submitButton = document.getElementById('submitButton');
-     var agreeBlock = document.getElementById('agreeTnC');
-      var tnc_err = document.getElementById('tnc_err'); var thankSection = document.getElementById('thankSection');
-       var privacyBlock = document.getElementById('privacyBlock')
-        submitButton.addEventListener('click', ev => { if (!agreeBlock.checked) {
-             tnc_err.classList.remove('hide') } else { tnc_err.classList.add('hide') 
-             thankSection.classList.remove('hide')
-              privacyBlock.classList.add('hide') 
-              submitButton.disabled = true } })
-               </script>
+    <script> var submitButton = document.getElementById('submitButton'); 
+    var agreeBlock = document.getElementById('agreeTnC'); var tnc_err = document.getElementById('tnc_err'); var thankSection = document.getElementById('thankSection'); var privacyBlock = document.getElementById('privacyBlock')
+     submitButton.addEventListener('click', ev => { if (!agreeBlock.checked) { tnc_err.classList.remove('hide') } else { tnc_err.classList.add('hide')
+      thankSection.classList.remove('hide') 
+      privacyBlock.classList.add('hide')
+       submitButton.disabled = true } }) </script>
 </body>
 
 </html>
